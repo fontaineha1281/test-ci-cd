@@ -54,6 +54,6 @@ jobs:
         password: ${{secrets.DOCKER_PASSWORD}}
     - name: Push to Docker Hub
       run: |
-        docker tag react ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_IMAGE }}
-        docker push ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_IMAGE }}
+        docker tag ${{secrets.DOCKER_IMAGE}} ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_IMAGE}}:v1
+        docker push ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_IMAGE}}:v1
     
