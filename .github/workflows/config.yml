@@ -54,8 +54,6 @@ jobs:
         password: ${{secrets.DOCKER_PASSWORD}}
     - name: Push to Docker Hub
       run: |
-# docker tag ${{secrets.DOCKER_IMAGE}} ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_IMAGE}}:v1
-# docker push ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_IMAGE}}:v1
         docker tag react fontaine1281/react:v1
         docker push fontaine1281/react:v1
     
