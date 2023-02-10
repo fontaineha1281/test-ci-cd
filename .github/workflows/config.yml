@@ -52,9 +52,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USER}}
         password: ${{ secrets.DOCKER_PASSWORD}}
-    # - name: Push to Docker Hub
-    #   run: |
-    #     docker compose tag --template "react:v1" --push 
-    #   #  ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}
-    #     docker compose push
-    #     docker logout
+    - name: Push to Docker Hub
+      run: |
+        docker compose push
+    
