@@ -1,0 +1,14 @@
+version: '3.7'
+
+services: 
+  react:
+    container_name: react
+    image: react
+    restart: always
+    build: 
+      context: ./my-app
+      dockerfile: ./Dockerfile
+    ports:
+      - "80:3000"
+    volumes: 
+      - ./my-app:/opt/web
