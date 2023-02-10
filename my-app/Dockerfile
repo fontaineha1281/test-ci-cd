@@ -1,4 +1,4 @@
-FROM node:node:18.14.0 AS development
+FROM node:18.14.0 AS development
 
 RUN mkdir opt/web
 WORKDIR /opt/web
