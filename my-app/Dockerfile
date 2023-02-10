@@ -2,7 +2,7 @@ FROM node:18.14.0-alpine3.17 AS builder
 
 RUN mkdir opt/web
 WORKDIR /opt/web
-COPY ./my-app/package.json ./
+COPY package.json ./
 RUN yarn
 
 ENV PATH="./node_modules/.bin:$PATH"
