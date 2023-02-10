@@ -1,4 +1,4 @@
-FROM node:18.14.0 AS development
+FROM node:18.14.0-alpine3.17 AS builder
 
 RUN mkdir opt/web
 WORKDIR /opt/web
