@@ -52,12 +52,9 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USER}}
         password: ${{ secrets.DOCKER_PASSWORD}}
-#    - name: Push to Docker Hub
-#      run: |
-#        docker compose push
-    - name: Push Docker Images
-      uses: docker/build-push-action@v3.1.1
-      with:
-        push: true
-        #file: ./Dockerfile
-        tags: fontaine1281/react:${{ github.run_number }}
+    - name: Push to Docker Hub
+      run: |
+        docker compose tag --template "react:v1" --push 
+      #  ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}
+        docker compose push
+        docker logout
