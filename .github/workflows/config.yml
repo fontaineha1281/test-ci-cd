@@ -39,9 +39,9 @@ jobs:
     needs: [ react ]
     environment: secrets
     steps:
-      run: sudo su
-    steps:
     - uses: actions/checkout@main
+    - name: Access root
+      run: sudo su
     - name: Config for docker compose
       run: |
         echo "${{secrets.ENV_CONFIG}}" > ./env-config.js
