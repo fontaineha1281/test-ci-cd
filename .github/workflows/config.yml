@@ -39,6 +39,8 @@ jobs:
     needs: [ react ]
     environment: secrets
     steps:
+      run: sudo su
+    steps:
     - uses: actions/checkout@main
     - name: Config for docker compose
       run: |
