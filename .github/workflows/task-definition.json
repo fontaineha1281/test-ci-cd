@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-west-1:495395698041:task-definition/test-cicd:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-west-1:495395698041:task-definition/test-cicd:2",
     "containerDefinitions": [
         {
             "name": "test",
-            "image": "public.ecr.aws/ecs/amazon-ecs-agent:latest",
+            "image": "public.ecr.aws/amazonlinux/amazonlinux:latest",
             "cpu": 0,
             "portMappings": [
                 {
@@ -33,7 +33,7 @@
     "family": "test-cicd",
     "executionRoleArn": "arn:aws:iam::495395698041:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 2,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -70,7 +70,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-02-14T09:54:33.522Z",
+    "registeredAt": "2023-02-14T10:02:43.313Z",
     "registeredBy": "arn:aws:iam::495395698041:root",
     "tags": []
 }
