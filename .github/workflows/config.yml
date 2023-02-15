@@ -44,6 +44,7 @@ jobs:
       run: |
         echo "${{secrets.ENV_CONFIG}}" > ./env-config.js
         echo "${{secrets.DOCKER_COMPOSE}}" > docker-compose.yml
+        cat docker-compose.yml
     - name: Build docker compose
       run: |
         docker-compose build
@@ -56,4 +57,4 @@ jobs:
       run: |
         docker tag react fontaine1281/react:v1
         docker push fontaine1281/react:v1
-    
+ 
