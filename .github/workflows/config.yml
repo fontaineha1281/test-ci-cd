@@ -71,7 +71,7 @@ jobs:
         password: ${{ secrets.PASSWORD}}
         port: ${{ secrets.PORT }}
         script: |
-          git pull https://github.com/fontaineha1281/test-ci-cd.git
+          git clone https://github.com/fontaineha1281/test-ci-cd.git
           echo "${{secrets.DOCKER_COMPOSE}}" > docker-compose.yml
           docker compose pull
           docker compose up -d
