@@ -31,10 +31,10 @@ on:
     branches: [ "main" ]
 
 env:
-  AWS_REGION: us-west-1                   # set this to your preferred AWS region, e.g. us-west-1
+  AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: test-cicd          # set this to your Amazon ECR repository name
   ECS_SERVICE: test-cicd                 # set this to your Amazon ECS service name
-  ECS_CLUSTER: test-cicd                  # set this to your Amazon ECS cluster name
+  ECS_CLUSTER: test-cicd-1                  # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: .github/workflows/task-definition.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: test-cicd           # set this to the name of the container in the
@@ -81,9 +81,9 @@ jobs:
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
-        task-definition: ${{ env.ECS_TASK_DEFINITION }}
-        container-name: ${{ env.CONTAINER_NAME }}
-        image: ${{ steps.build-image.outputs.image }}
+        task-definition: ${{env.ECS_TASK_DEFINITION}}
+        container-name: ${{env.CONTAINER_NAME}}
+        image: ${{ steps.build-image.outputs.image}}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
