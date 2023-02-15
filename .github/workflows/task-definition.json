@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-west-1:495395698041:task-definition/test-cicd:2",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:495395698041:task-definition/test-cicd:1",
     "containerDefinitions": [
         {
             "name": "test",
@@ -24,7 +24,7 @@
                 "options": {
                     "awslogs-create-group": "true",
                     "awslogs-group": "/ecs/test-cicd",
-                    "awslogs-region": "us-west-1",
+                    "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 }
             }
@@ -33,7 +33,7 @@
     "family": "test-cicd",
     "executionRoleArn": "arn:aws:iam::495395698041:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 2,
+    "revision": 1,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -70,7 +70,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-02-14T10:02:43.313Z",
+    "registeredAt": "2023-02-15T02:18:35.914Z",
     "registeredBy": "arn:aws:iam::495395698041:root",
     "tags": []
 }
