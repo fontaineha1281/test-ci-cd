@@ -61,6 +61,8 @@ jobs:
     needs: [ docker ]
     environment: secrets
     steps: 
+    - name: Change Permision Docker
+      run: sudo chmod 666 /var/run/docker.sock
     - name: Deploy NodeJS app
       uses: appleboy/ssh-action@v0.1.7
       with:
