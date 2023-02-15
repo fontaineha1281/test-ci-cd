@@ -72,7 +72,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           git clone https://github.com/fontaineha1281/test-ci-cd.git
-          echo "${{secrets.DOCKER_COMPOSE}}" > docker-compose.yml
+          echo "${{secrets.DOCKER_COMPOSE_PROD}}" > docker-compose.yml
           docker compose pull
           docker compose up -d
           echo 'Deployment successful to VPS'
