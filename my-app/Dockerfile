@@ -1,22 +1,14 @@
 FROM node:18.14.0-alpine3.17 AS builder
 
-RUN mkdir opt/web
-WORKDIR /opt/web
-COPY package.json ./
-RUN yarn
+WORKDIR /usr/src/app
 
-ENV PATH="./node_modules/.bin:$PATH"
+COPY package*.json ./
 
-# Following is needed for dev
-ENTRYPOINT [ "yarn", "start:docker" ]
+RUN npm install && npm install react-scripts@3.4.1 -g --silent 
 
-# Following is needed only for production
-# RUN yarn build
+COPY . ./
 
-# COPY ./env-config.js /opt/web/build/env-config.js
+RUN npm run build
 
-# FROM nginx:1.17-alpine
-# COPY ./default.conf /etc/nginx/conf.d/
-# COPY --from=builder /opt/web/build /usr/share/nginx/html
-# WORKDIR /usr/share/nginx/html
-# CMD ["nginx", "-g", "daemon off;"]
+FROM nginx:latest
+COPY --from=myapp /usr/src/app/build /usr/share/nginx/html
